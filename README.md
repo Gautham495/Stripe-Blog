@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Ultimate resource --> https://github.com/stripe-samples
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. One time payment
+2. Subscription
+3. Payment Link
+4. Stripe Connect
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Only 4 methods are there which we can use in our website/app that is our SAAS product.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Create a customer -> customerId
+Create a plan -> planId
+Create a price -> priceId
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+In stripe for one time payment
 
-## Learn More
+1. Use Sessions - > Stripe given flow
+2. Use Payment Intents - > custom flow
 
-To learn more about Next.js, take a look at the following resources:
+https://stripe.com/docs/payments/quickstart
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ Session -> stripe made flow where we have to create a session url link and send to frontend and user navigates there to pay.
+ Payment Intent -> Custom flow where user pays within the app. We get the payment intent from the backend and attach to our frontend. Then the users pays within our app/website itself.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+In stripe for subscription
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Use Sessions - > Stripe given flow
+2. Use Payment Intents - > custom flow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+https://stripe.com/docs/billing/quickstart
+
+Same exact logic as one time payment in development flow.
+
+But in product flow.
+
+After 30 days stripe sends the payment link to the user. if they pay we update the database.
+If they dont pay we should remove the premium:true to premium:false and remove all the pro features of the app.
+
+We can also show that 1-2 days remaining feature in our app to notify the user to pay.
+
+Only 3 types of flows in Stripe.
+
+1. Payment link
+2. Create a stripe url link to pay
+3. Custom flow.
+
+Product concepts which can be included in our apps/websites.
+
+1. Add proration concept -> Upgrading/Downgrading our existing plans we use in our app.
+2. Add Discounts/Coupons
+3. Customer portal to manage subscriptions.
+
