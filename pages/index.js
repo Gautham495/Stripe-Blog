@@ -6,7 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../firebaseconfig";
 import { setDoc, doc, getDoc } from "@firebase/firestore";
 import axios from "axios";
-import Head from "next/head";
+
 
 const Registration = () => {
   const [email, setEmail] = useState("");
@@ -63,38 +63,6 @@ const Registration = () => {
   return (
     <div>
       <Head>
-        <title>
-          Gautham Vijayan | Frontend React JS and React Native Mobile App
-          Developer
-        </title>
-        <meta
-          name="description"
-          content="Gautham Vijayan's Stripe Blog Example Registration Page"
-        />
-        <meta name="keywords" content="Gautham Vijayan Stripe Blog" />
-          
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:title"
-          content={"Gautham Vijayan's Stripe Blog Example Registration Page."}
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content={
-            "https://pbs.twimg.com/profile_images/1435255967743049730/D1812u9x_400x400.jpg"
-          }
-        />
-        <meta
-          property="og:url"
-          content={`https://gauthamvijay.com/stripe/registration`}
-        />
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:image"
-          content="https://pbs.twimg.com/profile_images/1435255967743049730/D1812u9x_400x400.jpg"
-        />
-        <meta property="twitter:site" content="@gauthamvijay495" />
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
