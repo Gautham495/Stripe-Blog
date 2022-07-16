@@ -1,1 +1,1 @@
-Github resource for Stripe blog by gautham vijayan.
+Github resource for Stripe blog by Gautham Vijayan.
