@@ -1,4 +1,5 @@
-import { db } from "../firebaseconfig";
+import { db } from "../../public/firebaseconfig";
+
 import { updateDoc, doc } from "@firebase/firestore";
 
 const stripe = require("stripe")(
