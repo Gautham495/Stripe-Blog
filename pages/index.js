@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db } from "../firebaseconfig";
+import { auth, db } from "../../public/firebaseconfig";
 import { setDoc, doc, getDoc } from "@firebase/firestore";
 import axios from "axios";
 
